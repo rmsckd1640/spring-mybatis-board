@@ -13,3 +13,7 @@ mybatis:
     type-aliases-package: com.example.backend.domain #DTO/VO 객체가 위치한 패키지 (xml에서 짧은 이름으로 쓰기 위함)
     configuration:
       map-underscore-to-camel-case: true #스네이크 케이스를 카멜케이스로 자동 매핑
+
+file:
+  upload:
+    directory: ./uploads
