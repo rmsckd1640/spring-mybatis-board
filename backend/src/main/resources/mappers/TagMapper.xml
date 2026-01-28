@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.backend.mapper.TagMapper">
+    <insert id="insertTag" parameterType="Tags" useGeneratedKeys="true" keyProperty="tagId">
+        insert into tags (tag_name)
+        values (#{tagName})
+    </insert>
+
+    <insert id="insertPostTag">
+        insert into posts_and_tags (post_id, tag_id)
+        values (#{postId}, #{tagId})
+    </insert>
+
+    <select id="findByName" resultType="Tags">
+        select tag_id, tag_name
+        from tags
+        where tag_name = #{tagName}
+    </select>
+</mapper>
